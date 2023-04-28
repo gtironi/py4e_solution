@@ -19,6 +19,6 @@ n = 0
 for tag in tags:
     #Extract the numbers and sum them
     sum += int(tag.contents[0])
-    n = n + 1
-print ("Count", n)
+    n += 1
+print ("count", n)
 print ("sum", sum)

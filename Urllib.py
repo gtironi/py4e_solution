@@ -33,4 +33,3 @@ for i in range(count + 1):
     names_find.append(names[position - 1])
 
 print('The last name is',names_find[len(names_find)-2])
-

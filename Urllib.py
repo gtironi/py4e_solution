@@ -10,18 +10,25 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 url = input('Enter - ')
-count = input('Enter count - ')
-position = input('Enter position - ')
-html = urllib.request.urlopen(url, context=ctx).read()
-soup = BeautifulSoup(html, 'html.parser')
+count = int(input('Enter count - '))
+position = int(input('Enter position - '))
 
-# Retrieve all of the anchor tags
-tags = soup('a')
+
 links = []
 names = []
-for tag in tags:
-    links.append(tag.get('href', None))
-    names.append(tag.contents[0])
+names_find = []
 
-print(links)
-print(names)
+for i in range(count + 1):
+    if i != 0:
+        url = links[position - 1]
+    print("Retrieving: ", url)
+    html = urllib.request.urlopen(url, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    tags = soup('a')
+    links = []
+    names = []
+    for tag in tags:
+        links.append(tag.get('href', None))
+        names.append(tag.contents[0])
+    names_find.append(names[position - 1])
+

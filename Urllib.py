@@ -13,7 +13,6 @@ url = input('Enter - ')
 count = int(input('Enter count - '))
 position = int(input('Enter position - '))
 
-
 links = []
 names = []
 names_find = []

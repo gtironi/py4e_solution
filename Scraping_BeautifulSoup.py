@@ -18,10 +18,11 @@ soup = BeautifulSoup(html, "html.parser")
 
 # Retrieve all of the span tags
 tags = soup('span')
+sum = 0
+n = 0
 for tag in tags:
-    # Look at the parts of a tag
-    # print('TAG:', tag)
-    # print('URL:', tag.get('href', None))
-    # print('Contents:', tag.contents[0])
-    # print('Attrs:', tag.attrs)
-    print (tag)
+    #Extract the numbers and sum them
+    sum += int(tag.contents[0])
+    n = n + 1
+print ("Count", n)
+print ("sum", sum)

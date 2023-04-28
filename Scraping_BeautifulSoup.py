@@ -1,3 +1,5 @@
+# To install BeautifulSoup, execute "pip3 install beautifulsoup4" in cmd
+
 import urllib.parse, urllib.error, urllib.request
 from urllib.request import urlopen
 from bs4 import BeautifulSoup

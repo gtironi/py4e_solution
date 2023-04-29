@@ -1,4 +1,3 @@
-import urllib.request, urllib.parse, urllib.error
 from urllib.request import urlopen
 import xml.etree.ElementTree as ET
 import ssl
@@ -20,6 +19,6 @@ print("Count", len(comments))
 sum = 0
 
 for comment in comments:
-    sum = sum + int(comment.find('count').text)
+    sum += int(comment.find('count').text)
 
 print (sum)

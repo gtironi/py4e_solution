@@ -15,7 +15,11 @@ data = urlopen(url, context=ctx).read()
 print('Retrieved', len(data), 'characters')
 
 tree = ET.fromstring(data)
-counts = tree.findall('.//count')
+comments = tree.findall('.//comment')
+print("Count", len(comments))
+sum = 0
 
-for count in counts:
-    
+for comment in comments:
+    sum = sum + int(comment.find('count').text)
+
+print (sum)
